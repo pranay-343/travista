@@ -37,7 +37,7 @@ def changepassword(request):
 
         else:
                 form = PasswordChangeForm(user=request.user)
-	return render(request,'editprofile.html',{'form': form})
+        return render(request,'editprofile.html',{'form': form})
 
 
 def model_form_upload(request):
