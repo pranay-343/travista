@@ -21,9 +21,9 @@ def createfeeds(request):
 		
 def viewfeeds(request):
         if request.user.is_authenticated():
-		feed_list = livefeeds.objects.all()
-		paginator = Paginator(feed_list, 15) # Show 25 contacts per page
-		page = request.GET.get('page')
+                feed_list = livefeeds.objects.all()
+                paginator = Paginator(feed_list, 15) # Show 25 contacts per page
+                page = request.GET.get('page')
 		try:
 			feed = paginator.page(page)
 		except PageNotAnInteger:
