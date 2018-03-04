@@ -26,7 +26,7 @@ def edit_profile(request):
                         return render(request,'editprofile.html',{'form': form})
         else:
                 form = EditProfileForm(instance=request.user)
-	return render(request, 'editprofile.html', {'form': form})
+        return render(request,'editprofile.html',{'form': form})
 
 def changepassword(request):
         if request.method == 'POST':
