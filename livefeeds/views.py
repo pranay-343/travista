@@ -20,23 +20,23 @@ def createfeeds(request):
 		return redirect('login')	
 		
 def viewfeeds(request):
-        if request.user.is_authenticated():
-                feed_list = livefeeds.objects.all()
-                paginator = Paginator(feed_list, 15) # Show 25 contacts per page
-                page = request.GET.get('page')
+	if request.user.is_authenticated():
+		feed_list = livefeeds.objects.all()
+		paginator = Paginator(feed_list, 15) # Show 25 contacts per page
+		page = request.GET.get('page')
 		try:feed=paginator.page(page)
-                except PageNotAnInteger:
+		except PageNotAnInteger:
 			# If page is not an integer, deliver first page.
-                        feed = paginator.page(1)
-                except EmptyPage:
+			feed = paginator.page(1)
+		except EmptyPage:
 			# If page is out of range (e.g. 9999), deliver last page of results.
-                        feed = paginator.page(paginator.num_pages)
-                template = 'livefeeds.html'
-                context = {"object_list" : feed,
+			feed = paginator.page(paginator.num_pages)
+		template = 'livefeeds.html'
+		context = {"object_list" : feed,
 			   "place_name" : "List",
 		}
 		return render(request,template,context)
-        else :
+	else :
 		return redirect('login')	
 	
 #def deletefeeds(request,id = None):
