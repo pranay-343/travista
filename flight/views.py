@@ -45,7 +45,7 @@ def detail(request) :
 
 			response = requests.post(url, data=json.dumps(params), headers=headers)
 			data = response.json()
-			print data
+			print (data)
 			detail = [];
 			for i in range (20) :
 				price = data['trips']['tripOption'][i]['saleTotal']
