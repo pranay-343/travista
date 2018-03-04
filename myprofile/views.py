@@ -36,8 +36,8 @@ def changepassword(request):
                         return render(request, 'editprofile.html', {'form': form})
 
         else:
-		form = PasswordChangeForm(user=request.user)
-	return render(request, 'editprofile.html', {'form': form})
+                form = PasswordChangeForm(user=request.user)
+	return render(request,'editprofile.html',{'form': form})
 
 
 def model_form_upload(request):
@@ -48,5 +48,5 @@ def model_form_upload(request):
             return redirect('home')
     else:
         form = DocumentForm()
-    return render(request, 'editprofile.html', {'form': form})
+    return render(request,'editprofile.html',{'form': form})
 
