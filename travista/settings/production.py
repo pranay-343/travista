@@ -25,12 +25,12 @@ PROJECT_DIR = Path(__file__).parent
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'ha0htcy!7uvg-j2s22embyy&-!_iw#51&816g^qs#6*^xgparx'
+SECRET_KEY = os.environ.get('SECRET_KEY','ha0htcy!7uvg-j2s22embyy&-!_iw#51&816g^qs#6*^xgparx')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['travistaex.herokuapp.com']
 
 
 # Application definition
@@ -91,17 +91,15 @@ WSGI_APPLICATION = 'travista.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
-#DATABASES = {
+DATABASES = {
 #    'default': {
 #        'ENGINE': 'django.db.backends.sqlite3',
 #       'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 #    }
-#}
-DATABASES = {
-      'default': dj_database_url.config(
-          default='sqlite:////{0}'.format(os.path.join(BASE_DIR, 'db.sqlite3'))
-      )
-  }
+}
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
+#DATABASES['default']['CONN_MAX_AGE'] = 500
 
 
 # Password validation
