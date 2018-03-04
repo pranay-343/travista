@@ -98,7 +98,7 @@ def Hospital(request):
 def School(request):
     if request.user.is_authenticated():		
         url = 'http://freegeoip.net/json/'
-	with closing(urlopen(url)) as response:
+        with closing(urlopen(url)) as response:
 		location = json.loads(response.read())
 		lng =  location['longitude']
 		lat =  location['latitude']
