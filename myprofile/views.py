@@ -30,7 +30,7 @@ def edit_profile(request):
 
 def changepassword(request):
         if request.method == 'POST':
-		form = PasswordChangeForm(data=request.POST,user=request.user)
+                form=PasswordChangeForm(data=request.POST,user=request.user)
 		if form.is_valid():
 			form.save()
 			return render(request, 'editprofile.html', {'form': form})
