@@ -24,8 +24,7 @@ def viewfeeds(request):
                 feed_list = livefeeds.objects.all()
                 paginator = Paginator(feed_list, 15) # Show 25 contacts per page
                 page = request.GET.get('page')
-		try:
-                        feed = paginator.page(page)
+		try:feed = paginator.page(page)
                 except PageNotAnInteger:
 			# If page is not an integer, deliver first page.
                         feed = paginator.page(1)
