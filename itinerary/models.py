@@ -30,10 +30,10 @@ class travelManager(models.Manager):
             errors.append("Travel Date From can not be in the future of Travel Date To")
         if len(errors) == 0:
             plan= Travel.objects.create(destination=postData['destination'],description=postData['description'], start=postData['start'],end=postData['end'], creator= id)
-            print "Successfully created new plan:"
+            print ("Successfully created new plan:")
             return (True, plan)
         else:
-            print "Cannot input into Data"
+            print ("Cannot input into Data")
             return (False, errors)
 
     def join(self, id, travel_id):
