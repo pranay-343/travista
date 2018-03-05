@@ -104,7 +104,6 @@ def School(request):
          lat =  location['latitude']
          lat1 = decimal.Decimal(lat)+decimal.Decimal(0.007798)
          lng1 = decimal.Decimal(lng)+decimal.Decimal(0.044059)		
-
 	name = explore.objects.all()
 	AUTH_KEY = 'AIzaSyAF1M_y5ABZdZRWKTkhMjMJuq5Ysz6swm8'
 	LOCATION = str(lat1) + "," + str(lng1)
