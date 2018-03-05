@@ -64,7 +64,7 @@ def join(request, travel_id):
         messages.error(request,"What trip?")
         return redirect('/')
     joiner= Travel.objects.join(request.user.id, travel_id)
-    print 80 * ('*'), joiner
+    print (80 * ('*'), joiner)
     if 'errors' in joiner:
         messages.error(request, joiner['errors'])
     return redirect('travel')
