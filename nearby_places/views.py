@@ -119,22 +119,22 @@ def School(request):
         f.close()
         location = json.loads(json_string)
 
-	for r in location['results']:
-	    
-	    if explore.objects.filter(name=r['name']) :
-		z='noo'
-	    #elif r['rating'] is not None :    
-	     #   explore.objects.create(name=r['name'],rating=r['rating'],lat=r['geometry']['location']['lat'],lng=r['geometry']['location']['lng'],vicinity=r['vicinity'],type='cafe')
-	     #   z = 'uyoo'
-	    else:
-		explore.objects.create(name=r['name'],lat=r['geometry']['location']['lat'],lng=r['geometry']['location']['lng'],vicinity=r['vicinity'],type='school')    
+        for r in location['results']:
+            
+            if explore.objects.filter(name=r['name']) :
+                z='noo'
+            #elif r['rating'] is not None :    
+             #   explore.objects.create(name=r['name'],rating=r['rating'],lat=r['geometry']['location']['lat'],lng=r['geometry']['location']['lng'],vicinity=r['vicinity'],type='cafe')
+             #   z = 'uyoo'
+            else:
+                explore.objects.create(name=r['name'],lat=r['geometry']['location']['lat'],lng=r['geometry']['location']['lng'],vicinity=r['vicinity'],type='school')    
 
-	z = explore.objects.filter(type='school')
-	context = { 'z' : z   }
-	return render(request,'nearbyplaces.html',context)
+        z = explore.objects.filter(type='school')
+        context = { 'z' : z   }
+        return render(request,'nearbyplaces.html',context)
       else :
-		return redirect('login')	
-		
+                return redirect('login')        
+                
 	
 def Shopping_mall(request):
     if request.user.is_authenticated():		
