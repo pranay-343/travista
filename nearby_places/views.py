@@ -173,7 +173,7 @@ def Shopping_mall(request):
       z = explore.objects.filter(type='shopping_mall')
       context = { 'z' : z   }
       return render(request,'nearbyplaces.html',context)
-     else:return redirect('login')            
+    else:return redirect('login')            
 		
 	
 def Restaurant(request):
