@@ -132,8 +132,7 @@ def School(request):
         z = explore.objects.filter(type='school')
         context = { 'z' : z   }
         return render(request,'nearbyplaces.html',context)
-      else:
-        return redirect('login')        
+     else:return redirect('login')        
                 
 	
 def Shopping_mall(request):
