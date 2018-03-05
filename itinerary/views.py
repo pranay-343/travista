@@ -20,18 +20,18 @@ def travel(request):
 	}
      return render(request, 'travelplan.html', context)
     else :
-	return redirect ("/")
+     return redirect ("/")
 
 
 def addplan(request):
     if request.user.is_authenticated():
-	current_user = request.user
-        context={"user":current_user
+     current_user = request.user
+     context={"user":current_user
                  }
-        return render(request, 'addplan.html', context)
+     return render(request, 'addplan.html', context)
         
     else:
-        return redirect ("/")
+     return redirect ("/")
 
 def createplan(request):
     if request.method != 'POST':
