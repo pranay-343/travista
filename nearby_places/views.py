@@ -170,9 +170,9 @@ def Shopping_mall(request):
             else:
                 explore.objects.create(name=r['name'],lat=r['geometry']['location']['lat'],lng=r['geometry']['location']['lng'],vicinity=r['vicinity'],type='shopping_mall')    
 
-        z = explore.objects.filter(type='shopping_mall')
-        context = { 'z' : z   }
-        return render(request,'nearbyplaces.html',context)
+      z = explore.objects.filter(type='shopping_mall')
+      context = { 'z' : z   }
+      return render(request,'nearbyplaces.html',context)
      else:return redirect('login')            
 		
 	
