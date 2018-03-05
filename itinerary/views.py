@@ -12,13 +12,13 @@ from django.contrib.auth import login, authenticate
 
 def travel(request):
     if request.user.is_authenticated():
-	current_user = request.user
-	context = {
+     current_user = request.user
+     context = {
 	"user": request.user.id,
 	"travels" : Travel.objects.all(),
 	"others": Travel.objects.all().exclude(join__id=request.user.id)
 	}
-	return render(request, 'travelplan.html', context)
+     return render(request, 'travelplan.html', context)
     else :
 	return redirect ("/")
 
