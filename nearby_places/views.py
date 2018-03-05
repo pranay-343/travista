@@ -140,8 +140,8 @@ def Shopping_mall(request):
       url = 'http://freegeoip.net/json/'
       with closing(urlopen(url)) as response:
         location = json.loads(response.read())
-	lng =  location['longitude']
-	lat =  location['latitude']
+	lng = location['longitude']
+	lat = location['latitude']
 	lat1 = decimal.Decimal(lat)+decimal.Decimal(0.007798)
 	lng1 = decimal.Decimal(lng)+decimal.Decimal(0.044059)           
 
