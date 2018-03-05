@@ -28,7 +28,7 @@ PROJECT_DIR = Path(__file__).parent
 SECRET_KEY = os.environ.get('SECRET_KEY','ha0htcy!7uvg-j2s22embyy&-!_iw#51&816g^qs#6*^xgparx')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['travistaex.herokuapp.com']
 
