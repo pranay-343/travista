@@ -104,20 +104,20 @@ def School(request):
          lat =  location['latitude']
          lat1 = decimal.Decimal(lat)+decimal.Decimal(0.007798)
          lng1 = decimal.Decimal(lng)+decimal.Decimal(0.044059)		
-	name = explore.objects.all()
-	AUTH_KEY = 'AIzaSyAF1M_y5ABZdZRWKTkhMjMJuq5Ysz6swm8'
-	LOCATION = str(lat1) + "," + str(lng1)
-	RADIUS = 1000
-	TYPES = 'school'
-	MyUrl = ('https://maps.googleapis.com/maps/api/place/nearbysearch/json'
-					   '?location=%s'
-					   '&radius=%s'
-					   '&types=%s'
-					   '&key=%s') % (LOCATION, RADIUS, TYPES, AUTH_KEY)
-	f = urllib2.urlopen(MyUrl)
-	json_string = f.read()
-	f.close()
-	location = json.loads(json_string)
+        name = explore.objects.all()
+        AUTH_KEY = 'AIzaSyAF1M_y5ABZdZRWKTkhMjMJuq5Ysz6swm8'
+        LOCATION = str(lat1) + "," + str(lng1)
+        RADIUS = 1000
+        TYPES = 'school'
+        MyUrl = ('https://maps.googleapis.com/maps/api/place/nearbysearch/json'
+                                           '?location=%s'
+                                           '&radius=%s'
+                                           '&types=%s'
+                                           '&key=%s') % (LOCATION, RADIUS, TYPES, AUTH_KEY)
+        f = urllib2.urlopen(MyUrl)
+        json_string = f.read()
+        f.close()
+        location = json.loads(json_string)
 
 	for r in location['results']:
 	    
