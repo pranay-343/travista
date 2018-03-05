@@ -96,7 +96,7 @@ def Hospital(request):
 			
         
 def School(request):
-        if request.user.is_authenticated():		
+     if request.user.is_authenticated():		
         url = 'http://freegeoip.net/json/'
         with closing(urlopen(url)) as response:
         location = json.loads(response.read())
@@ -133,7 +133,7 @@ def School(request):
 	z = explore.objects.filter(type='school')
 	context = { 'z' : z   }
 	return render(request,'nearbyplaces.html',context)
-    else :
+      else :
 		return redirect('login')	
 		
 	
