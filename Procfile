@@ -1,1 +1,1 @@
-"web: gunicorn travista.wsgi" 
+web: gunicorn travista.wsgi
