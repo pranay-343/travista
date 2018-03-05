@@ -167,12 +167,12 @@ def Shopping_mall(request):
 	    #elif r['rating'] is not None :    
 	     #   explore.objects.create(name=r['name'],rating=r['rating'],lat=r['geometry']['location']['lat'],lng=r['geometry']['location']['lng'],vicinity=r['vicinity'],type='cafe')
 	     #   z = 'uyoo'
-	else:
+       else:
 	 explore.objects.create(name=r['name'],lat=r['geometry']['location']['lat'],lng=r['geometry']['location']['lng'],vicinity=r['vicinity'],type='shopping_mall')    
 
-	z = explore.objects.filter(type='shopping_mall')
-	context = { 'z' : z   }
-	return render(request,'nearbyplaces.html',context)
+       z = explore.objects.filter(type='shopping_mall')
+       context = { 'z' : z   }
+       return render(request,'nearbyplaces.html',context)
     else :
 	return redirect('login')        
 		
