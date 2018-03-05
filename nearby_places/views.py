@@ -163,7 +163,7 @@ def Shopping_mall(request):
       for r in location['results']:
   
         if explore.objects.filter(name=r['name']) :
-	  z='noo'
+	 z='noo'
 	    #elif r['rating'] is not None :    
 	     #   explore.objects.create(name=r['name'],rating=r['rating'],lat=r['geometry']['location']['lat'],lng=r['geometry']['location']['lng'],vicinity=r['vicinity'],type='cafe')
 	     #   z = 'uyoo'
