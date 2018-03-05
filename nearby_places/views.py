@@ -1,6 +1,6 @@
 from django.shortcuts import render ,redirect
 from django.http import HttpResponse
-import urllib, json, urllib2
+import urllib.request as urllib2
 from urllib2 import urlopen
 from contextlib import closing
 import json
