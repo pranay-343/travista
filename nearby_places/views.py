@@ -160,7 +160,7 @@ def Shopping_mall(request):
       f.close()
       location = json.loads(json_string)
 
-       for r in location['results']:
+      for r in location['results']:
             
             if explore.objects.filter(name=r['name']) :
                 z='noo'
