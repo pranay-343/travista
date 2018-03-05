@@ -1,7 +1,8 @@
 from django.shortcuts import render ,redirect
 from django.http import HttpResponse
 import urllib.request as urllib2
-from urllib2 import urlopen
+import urllib.request
+#from urllib2 import urlopen
 from contextlib import closing
 import json
 import decimal
@@ -28,7 +29,7 @@ def Cafe(request):
 											   '&radius=%s'
 											   '&types=%s'
 											   '&key=%s') % (LOCATION, RADIUS, TYPES, AUTH_KEY)
-			f = urllib2.urlopen(MyUrl)
+			f = urllib.request.urlopen(MyUrl)
 			json_string = f.read()
 			f.close()
 			location = json.loads(json_string)
@@ -73,7 +74,7 @@ def Hospital(request):
 											   '&radius=%s'
 											   '&types=%s'
 											   '&key=%s') % (LOCATION, RADIUS, TYPES, AUTH_KEY)
-			f = urllib2.urlopen(MyUrl)
+			f = urllib.request.urlopen(MyUrl)
 			json_string = f.read()
 			f.close()
 			location = json.loads(json_string)
@@ -114,7 +115,7 @@ def School(request):
                                            '&radius=%s'
                                            '&types=%s'
                                            '&key=%s') % (LOCATION, RADIUS, TYPES, AUTH_KEY)
-        f = urllib2.urlopen(MyUrl)
+        f = urllib.request.urlopen(MyUrl)
         json_string = f.read()
         f.close()
         location = json.loads(json_string)
@@ -155,7 +156,7 @@ def Shopping_mall(request):
 					   '&radius=%s'
 					   '&types=%s'
 					   '&key=%s') % (LOCATION, RADIUS, TYPES, AUTH_KEY)
-      f = urllib2.urlopen(MyUrl)
+      f = urllib.request.urlopen(MyUrl)
       json_string = f.read()
       f.close()
       location = json.loads(json_string)
@@ -196,7 +197,7 @@ def Restaurant(request):
 					   '&radius=%s'
 					   '&types=%s'
 					   '&key=%s') % (LOCATION, RADIUS, TYPES, AUTH_KEY)
-      f = urllib2.urlopen(MyUrl)
+      f = urllib.request.urlopen(MyUrl)
       json_string = f.read()
       f.close()
       location = json.loads(json_string)
@@ -236,7 +237,7 @@ def Movie_theater(request):
 					   '&radius=%s'
 					   '&types=%s'
 					   '&key=%s') % (LOCATION, RADIUS, TYPES, AUTH_KEY)
-      f = urllib2.urlopen(MyUrl)
+      f = urllib.request.urlopen(MyUrl)
       json_string = f.read()
       f.close()
       location = json.loads(json_string)
