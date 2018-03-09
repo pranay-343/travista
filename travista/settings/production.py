@@ -51,7 +51,7 @@ INSTALLED_APPS = [
 	'myprofile',
 	'routes',
 	'itinerary',
-	'storages',
+	
 ]
 
 MIDDLEWARE_CLASSES = [
