@@ -57,7 +57,7 @@ def Cafe(request):
 def Hospital(request):
 		
 		if request.user.is_authenticated():	
-			url = 'http://freegeoip.net/json/'
+			url = 'https://freegeoip.net/json/'
 			with closing(urlopen(url)) as response:
 					location = json.loads(response.read())
 					lng =  location['longitude']
@@ -99,7 +99,7 @@ def Hospital(request):
         
 def School(request):
      if request.user.is_authenticated():		
-        url = 'http://freegeoip.net/json/'
+        url = 'https://freegeoip.net/json/'
         with closing(urlopen(url)) as response:
          location = json.loads(response.read())
          lng =  location['longitude']
@@ -139,7 +139,7 @@ def School(request):
 	
 def Shopping_mall(request):
     if request.user.is_authenticated():         
-      url = 'http://freegeoip.net/json/'
+      url = 'https://freegeoip.net/json/'
       with closing(urlopen(url)) as response:
        location = json.loads(response.read())
        lng = location['longitude']
@@ -180,7 +180,7 @@ def Shopping_mall(request):
 	
 def Restaurant(request):
     if request.user.is_authenticated():         
-      url = 'http://freegeoip.net/json/'
+      url = 'https://freegeoip.net/json/'
       with closing(urlopen(url)) as response:
        location = json.loads(response.read())
        lng = location['longitude']
@@ -220,7 +220,7 @@ def Restaurant(request):
     
 def Movie_theater(request):
     if request.user.is_authenticated():         
-      url = 'http://freegeoip.net/json/'
+      url = 'https://freegeoip.net/json/'
       with closing(urlopen(url)) as response:
        location = json.loads(response.read())
        lng = location['longitude']
