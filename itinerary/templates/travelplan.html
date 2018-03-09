@@ -1,3 +1,5 @@
+{% extends 'base_new.html' %}
+{% block content %}
 <!DOCTYPE html>
 <html>
   <head>
@@ -9,7 +11,7 @@
   </head>
   <body>
     <div class="container">
-        <h5 style="text-align: right"><a href="/logout">Logout</a></h5>
+        <!--h5 style="text-align: right"><a href="/logout">Logout</a></h5-->
         <br>
         <p>Successfully logged in! Welcome, <b>{{user.current_user.id}} !</b></p>
         {% if messages %}
@@ -92,3 +94,4 @@
     </div>
   </body>
 </html>
+{% endblock %}
