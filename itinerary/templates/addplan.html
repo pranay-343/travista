@@ -21,22 +21,20 @@
                 {% endfor %}
                 </ul>
             {% endif %} --->
-			<head>	
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
-	</head>	
+		
 		<div class="container row">
             <div class="row">
                 <form action="{% url 'createplan' %}" class="col s12" method="POST">
                     <div class="">
                     {% csrf_token %}
                     <!-- <label for="textarea1"></label> -->
-                    <textarea name="destination" class="materialize-textarea" placeholder="Destination"></textarea>
+                    <textarea name="destination" class="col-lg-3 control-label" placeholder="Destination"></textarea>
                     <!-- <label for="textarea2">Description</label> -->
-                    <textarea name="description" class="materialize-textarea" placeholder="Description"></textarea>
+                    <textarea name="description" class="col-lg-3 control-label" placeholder="Description"></textarea>
                     <label for="textarea3">Travel Date From</label>
-                    <input name="start" id="textarea3" type="date" class="materialize-textarea" placeholder="Travel Date From~">
+                    <input name="start" id="textarea3" type="date" class="col-lg-3 control-label" placeholder="Travel Date From~">
                     <label for="textare4">Travel Date To</label>
-                    <input name="end" id="textare4" type="date" class="materialize-textarea" placeholder="Travel Date To">
+                    <input name="end" id="textare4" type="date" class="col-lg-3 control-label" placeholder="Travel Date To">
                     <button type="submit" class="btn">Add</button>
                     </div>
                 </form>
