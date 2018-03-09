@@ -1,7 +1,7 @@
 {% extends 'base_new.html' %}
 {% block content %}
 <!DOCTYPE html>
-<html>
+<!------html>
   <head>
     <meta charset="utf-8">
     <title>Travel Dash Board</title>
@@ -11,7 +11,7 @@
   </head>
   <body>
     <div class="container">
-        <!--h5 style="text-align: right"><a href="/logout">Logout</a></h5-->
+        <!--h5 style="text-align: right"><a href="/logout">Logout</a></h5>
         <br>
         <p>Successfully logged in! Welcome, <b>{{user.current_user.id}} !</b></p>
         {% if messages %}
@@ -21,7 +21,7 @@
             {% endfor %}
             </ul>
           {% endif %}
-    </div>
+    </div ---->
     <div class="container">
         <h4>Your Trip Schedules</h4>
         <table>
